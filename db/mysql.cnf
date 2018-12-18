@@ -1,0 +1,4 @@
+[mysqld]
+explicit_defaults_for_timestamp=true
+wait_timeout=86400
+interactive_timeout=7200
