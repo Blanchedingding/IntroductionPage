@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<!--不适用spring，仅作为hibernate配置，用于annotationTest的配置文件-->
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MySQL5Dialect
+        </property>
+        <property name="hibernate.connection.driver_class">
+            com.mysql.jdbc.Driver
+        </property>
+
+        <!-- Assume students is the database name -->
+        <!--在xml的配置文件中 ；要用  &amp;   代替-->
+        <property name="hibernate.connection.url">
+            jdbc:mysql://127.0.0.1:3306/test?serverTimezone=GMT%2B8&amp;useUnicode=true&amp;characterEncoding=utf-8
+        </property>
+        <property name="hibernate.connection.username">
+            root
+        </property>
+        <!--<property name="hibernate.connection.password">-->
+        <!--</property>-->
+
+        <!--自动在数据库里创建表-->
+        <property name="hbm2ddl.auto">update</property>
+
+    </session-factory>
+</hibernate-configuration>
